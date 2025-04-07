@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Recipe | Dianah's Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --electric-blue: #00f3ff;
+            --acid-green: #b4ff00;
+            --gradient-bg: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ff00ff);
+            --light: #f0f0f0;
+            --primary: #ff6b6b;
+            --secondary: #f39c12;
+        }
+
+        /* Header & Footer */
+        header {
+            background: var(--gradient-bg);
+            padding: 1rem 0;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            position: relative;
+        }
+        header h1 {
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px var(--electric-blue), -2px -2px var(--neon-pink);
+            animation: glitch-text 2s infinite;
+        }
+        nav a {
+            color: white;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--acid-green);
+        }
+        nav a.active::after {
+            background-color: var(--acid-green);
+        }
+        footer {
+            background-color: #220109;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* Glitch Text Animation */
+        @keyframes glitch-text {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(3px, -3px); }
+            60% { transform: translate(-3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Recipe Page Styles */
+        .recipe-page {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .recipe-header {
+            margin-bottom: 2rem;
+        }
+        .recipe-hero {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        .ingredients, .instructions, .nutrition {
+            text-align: left;
+            margin: 2rem auto;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .nutrition-table td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--acid-green);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: var(--neon-pink);
+        }
+        .method-btn {
+            background: var(--light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin: 0.5rem;
+        }
+        .method-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleMethod(method) {
+            const elements = document.querySelectorAll(`.${method}`);
+            elements.forEach(element => {
+                element.classList.toggle('hidden');
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dianah Onkoba</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Recipes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="recipe-page">
+        <div class="container">
+            <div class="recipe-header">
+                <h1>Delicious Steamed Rice</h1>
+                <p class="recipe-description">This recipe provides a simple method to cook perfect steamed rice, whether on the stovetop, in the oven, or in the microwave.</p>
+                <img src="Basmati Rice, Microwave Method for Cooking.jpg" alt="Steamed Rice" class="recipe-hero">
+            </div>
+
+            <div class="ingredients">
+                <h2><i class="fas fa-shopping-basket"></i> Ingredients</h2>
+                <h3>Cups</h3>
+                <h4>Stovetop (my default method):</h4>
+                <ul>
+                    <li>1 cup white rice – short, medium, or long grain, uncooked</li>
+                    <li>1 ½ cups water</li>
+                </ul>
+                <h4>Oven:</h4>
+                <ul>
+                    <li>2 cups white rice – short, medium, or long grain</li>
+                    <li>3 cups boiling water</li>
+                </ul>
+                <h4>Microwave:</h4>
+                <ul>
+                    <li>1 cup white rice – short, medium, or long grain</li>
+                    <li>2 cups boiling water</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h2><i class="fas fa-list-ol"></i> Instructions</h2>
+                <h3>Before you start:</h3>
+                <p>Check rice type: This recipe is for the following white rice types: long grain, medium grain, short grain (excluding sushi rice).</p>
+                <p><strong>DO NOT RINSE your rice.</strong></p>
+
+                <h3>Stovetop (my default):</h3>
+                <ol>
+                    <li>Bring to simmer – Place water and rice in a large saucepan over medium-high heat. Once the entire surface of the water is bubbling gently, turn heat down to low and cover with a lid.</li>
+                    <li>Cook 13 minutes – Cook for 13 minutes. Do not stir, do not remove lid. Water should now all be absorbed – tilt to check.</li>
+                    <li>Rest – Remove from stove, still with lid, and leave for 10 minutes.</li>
+                    <li>Fluff – Remove lid, fluff with a rice paddle or fork, and serve!</li>
+                </ol>
+
+                <h3>Oven:</h3>
+                <button class="method-btn" onclick="toggleMethod('oven-method')">Show Oven Method</button>
+                <div class="oven-method hidden">
+                    <ol>
+                        <li>Preheat oven to 200°C/390°F (180°C fan forced).</li>
+                        <li>Use a small casserole pot about 24cm/10" wide with a lid.</li>
+                        <li>Place boiling water and rice in pot, cover with lid, and bake for 35 minutes.</li>
+                        <li>Remove from oven, and leave for 10 minutes with the lid still on. Remove lid, fluff with a rice paddle or fork, and serve!</li>
+                    </ol>
+                </div>
+
+                <h3>Microwave:</h3>
+                <button class="method-btn" onclick="toggleMethod('microwave-method')">Show Microwave Method</button>
+                <div class="microwave-method hidden">
+                    <ol>
+                        <li>Place rice and boiling water in a tall microwave-proof container.</li>
+                        <li>Microwave on high for 12 minutes with NO LID (1100 – 1200W microwaves).</li>
+                        <li>Remove, cover with lid, leave for 10 minutes. Remove lid, fluff with a rice paddle or fork, and serve!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="nutrition">
+                <h2><i class="fas fa-chart-bar"></i> Nutrition Facts</h2>
+                <table class="nutrition-table">
+                    <tr>
+                        <td>Calories</td>
+                        <td>205 cal</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td>45g (15% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>4g (8% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td>
+                        <td>1g (2% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Saturated Fat</td>
+                        <td>1g (6% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Sodium</td>
+                        <td>2mg (0% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Potassium</td>
+                        <td>55mg (2% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Fiber</td>
+                        <td>1g (4% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Sugar</td>
+                        <td>1g (1% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Calcium</td>
+                        <td>16mg (2% DV)</td>
+                    </tr>
+                    <tr>
+                        <td>Iron</td>
+                        <td>1mg (6% DV)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <a href="menu.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Recipes</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Dianah Onkoba | Microbiology @ JKUAT</p>
+        </div>
+    </footer>
+</body>
+</html>

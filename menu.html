@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes | Dianah's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Gen Z Style Enhancements */
+        :root {
+            --neon-pink: #ff00ff;
+            --electric-blue: #00f3ff;
+            --acid-green: #b4ff00;
+            --gradient-bg: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ff00ff);
+        }
+
+        /* Header & Footer */
+        header {
+            background: var(--gradient-bg);
+            padding: 1rem 0;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            position: relative;
+        }
+        header h1 {
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px var(--electric-blue), -2px -2px var(--neon-pink);
+            animation: glitch-text 2s infinite;
+        }
+        nav a {
+            color: white;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--acid-green);
+        }
+        nav a.active::after {
+            background-color: var(--acid-green);
+        }
+        footer {
+            background-color: #220109;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* Glitch Text Animation */
+        @keyframes glitch-text {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(3px, -3px); }
+            60% { transform: translate(-3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Menu Section */
+        .menu {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .recipe-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .recipe-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 1rem;
+            text-align: left;
+            width: 300px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .recipe-card:hover {
+            transform: scale(1.05);
+        }
+        .card-image img {
+            width: 100%;
+            height: auto;
+        }
+        .hover-details {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .recipe-card:hover .hover-details {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dianah Onkoba</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html" class="active">Recipes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="menu">
+        <div class="container">
+            <h1>My Recipes</h1>
+            <p>Click any recipe card to view full details</p>
+
+            <div class="recipe-cards">
+                <a href="steamed-cabbage.html" class="recipe-card">
+                    <div class="card-image">
+                        <img src="Steamed cabbage medley.jpg" alt="Steamed Cabbage">
+                    </div>
+                    <div class="card-content">
+                        <h3>Spiced Steamed Cabbage</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 20 mins</span>
+                            <span><i class="fas fa-users"></i> Serves 3</span>
+                        </div>
+                        <div class="hover-details">
+                            <p>Healthy, delicious and easy to make. Goes well with rice or chapati.</p>
+                            <span class="view-recipe">View Recipe →</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="rice-recipe.html" class="recipe-card">
+                    <div class="card-image">
+                        <img src="This recipe shows you how to make perfect rice….jpg" alt="Steamed Rice">
+                    </div>
+                    <div class="card-content">
+                        <h3>Delicious Steamed Rice</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 20 mins</span>
+                            <span><i class="fas fa-users"></i> Serves 4</span>
+                        </div>
+                        <div class="hover-details">
+                            <p>Fluffy and flavorful rice, perfect as a side dish.</p>
+                            <span class="view-recipe">View Recipe →</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="fried-beef.html" class="recipe-card">
+                    <div class="card-image">
+                        <img src="Whip up this easy beef stir fry recipe, a quick….jpg" alt="Fried Beef">
+                    </div>
+                    <div class="card-content">
+                        <h3>Crispy Fried Beef</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> 30 mins</span>
+                            <span><i class="fas fa-users"></i> Serves 4</span>
+                        </div>
+                        <div class="hover-details">
+                            <p>Perfectly seasoned beef with crispy exterior and tender interior.</p>
+                            <span class="view-recipe">View Recipe →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Dianah Onkoba | 
+                <a href="https://facebook.com/DiannahOnkoba" target="_blank"><i class="fab fa-facebook"></i></a> 
+                <a href="tel:0745771934"><i class="fas fa-phone"></i></a> 
+                <a href="mailto:dianahonkoba229@gmail.com"><i class="fas fa-envelope"></i></a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

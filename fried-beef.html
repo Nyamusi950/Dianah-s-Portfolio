@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beef Stir Fry | Dianah's Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dianah Onkoba</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Recipes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="recipe-page">
+        <div class="container">
+            <div class="recipe-header">
+                <h1>Crispy Beef Stir Fry</h1>
+                <p class="recipe-description">A quick and delicious beef stir fry with vibrant vegetables, perfect over steamed rice.</p>
+
+                <div class="recipe-actions">
+                    <button class="action-btn" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                    <button class="action-btn" id="share-btn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                    
+                    <!-- Share buttons section (hidden by default) -->
+                    <div class="share-popup" id="share-popup" style="display:none;">
+                        <button class="btn share-btn" data-platform="twitter">Share on Twitter</button>
+                        <button class="btn share-btn" data-platform="whatsapp">Share on WhatsApp</button>
+                        <button class="btn share-btn" data-platform="facebook">Share on Facebook</button>
+                    </div>
+                </div>
+
+                <img src="Struggling to find quick and tasty dinner ideas_….jpg" alt="Beef Stir Fry" class="recipe-hero">
+            </div>
+
+            <div class="recipe-content">
+                <div class="ingredients">
+                    <h2><i class="fas fa-shopping-basket"></i> Ingredients</h2>
+                    <h3>Sauce (Note 1)</h3>
+                    <ul>
+                        <li>3 tsp cornstarch / corn flour</li>
+                        <li>2 tbsp + 1/3 cup water, separated</li>
+                        <li>2 tbsp soy sauce</li>
+                        <li>1 tbsp oyster sauce</li>
+                        <li>2 tbsp Chinese cooking wine OR Mirin</li>
+                        <li>1 tsp white sugar</li>
+                        <li>1/2 tsp sesame oil (optional)</li>
+                        <li>Dash of black pepper</li>
+                    </ul>
+
+                    <h3>Stir Fry</h3>
+                    <ul>
+                        <li>2 tbsp peanut oil</li>
+                        <li>1 garlic clove, crushed</li>
+                        <li>7 oz / 200 g beef, good quality, thinly sliced</li>
+                        <li>1/2 small onion, sliced (yellow, brown or white)</li>
+                        <li>1/2 red bell pepper, sliced</li>
+                        <li>1 small carrot, halved lengthwise and sliced thinly on the diagonal</li>
+                        <li>3 baby pak choy / bok choy, quartered lengthwise</li>
+                        <li>2 stems scallion / shallots, cut into 1.5"/3cm pieces</li>
+                    </ul>
+
+                    <h3>To Serve</h3>
+                    <ul>
+                        <li>Steamed white rice</li>
+                        <li>Sesame seeds (optional)</li>
+                        <li>Fresh cilantro / coriander (optional)</li>
+                    </ul>
+                </div>
+
+                <div class="instructions">
+                    <h2><i class="fas fa-list-ol"></i> Instructions</h2>
+                    <ol>
+                        <li>Combine the cornstarch and 2 tbsp of water in a small bowl, mix until smooth.</li>
+                        <li>Mix in remaining sauce ingredients EXCEPT the 1/3 cup water.</li>
+                        <li>Place the beef and 2 tbsp of sauce in a bowl and mix gently. Set aside for 15 minutes.</li>
+                        <li>Add 1/3 cup water into the remaining sauce. Set aside.</li>
+                        <li>Heat oil in a wok over high heat. Add garlic and cook for 15 seconds.</li>
+                        <li>Add onion and cook for 1 minute.</li>
+                        <li>Add the beef and cook until it changes color from red to light brown but not cooked through.</li>
+                        <li>Add bell pepper and carrots and stir fry for 30 seconds.</li>
+                        <li>Add sauce and cook for 30 seconds.</li>
+                        <li>Add pak choy and scallions/shallots and cook for a further 1 minute until the sauce is thickened.</li>
+                        <li>Remove from heat immediately.</li>
+                        <li>Serve immediately with rice - or for a low carb, low cal option, try cauliflower rice! Garnish with sesame seeds and cilantro, if using.</li>
+                    </ol>
+                </div>
+
+                <div class="nutrition">
+                    <h2><i class="fas fa-chart-bar"></i> Nutrition Facts (per serving)</h2>
+                    <table class="nutrition-table">
+                        <tr>
+                            <td>Calories</td>
+                            <td>320</td>
+                        </tr>
+                        <tr>
+                            <td>Protein</td>
+                            <td>25g</td>
+                        </tr>
+                        <tr>
+                            <td>Fat</td>
+                            <td>22g</td>
+                        </tr>
+                        <tr>
+                            <td>Carbs</td>
+                            <td>8g</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <a href="menu.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Recipes</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Dianah Onkoba | Microbiology @ JKUAT</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to toggle the display of the share popup
+        document.getElementById('share-btn').addEventListener('click', function() {
+            var popup = document.getElementById('share-popup');
+            if (popup.style.display === 'none' || popup.style.display === '') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
